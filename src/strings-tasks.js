@@ -275,7 +275,12 @@ function reverseString(str) {
  * @return {string} - The string in alphabetical order.
  *
  * @example:
-  thzrow new Error('Not implemented');
+ *   orderAlphabetically('webmaster') => 'abeemrstw'
+ *   orderAlphabetically('textbook') => 'bekoottx'
+ *   orderAlphabetically('abc123xyz') => '123abcxyz'
+ */
+function orderAlphabetically(/* str */) {
+  throw new Error('Not implemented');
 }
 
 /**
