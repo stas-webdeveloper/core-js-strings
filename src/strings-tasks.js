@@ -269,29 +269,6 @@ function reverseString(str) {
 }
 
 /**
- * 16 Returns a string with characters in alphabetical order.
- *
- * @param {string} str - The input string.
- * @return {string} - The string in alphabetical order.
- *
- * @example:
- *   orderAlphabetically('webmaster') => 'abeemrstw'
- *   orderAlphabetically('textbook') => 'bekoottx'
- *   orderAlphabetically('abc123xyz') => '123abcxyz'
- */
-function orderAlphabetically(str) {
-  const strArr = str.split('');
-  const newStr = '';
-  for (let i = 0; i < strArr.length; i += 1) {
-    for (let j = 0; j < strArr.length; j += 1) {
-      if (strArr[j] < newStr[i]) {
-        newStr[i] = strArr[j];
-      }
-    }
-  }
-}
-
-/**
  * 17 Checks if a given string contains a specified substring.
  *
  * @param {string} str - The input string to search within.
@@ -346,13 +323,28 @@ function countVowels(str) {
  *   isPalindrome('No lemon, no melon') => true
  */
 function isPalindrome(str) {
-  const lowCase = str.toLowerCase().replaceAll(' ', '');
+  const lowCase = str.toLowerCase().replace(/[' ', ?, !]/g, '');
   let newStr = '';
   for (let i = lowCase.length - 1; i >= 0; i -= 1) {
     newStr += lowCase[i];
   }
   return lowCase === newStr;
   // throw new Error('Not implemented');
+}
+
+/**
+ * 16 Returns a string with characters in alphabetical order.
+ *
+ * @param {string} str - The input string.
+ * @return {string} - The string in alphabetical order.
+ *
+ * @example:
+ *   orderAlphabetically('webmaster') => 'abeemrstw'
+ *   orderAlphabetically('textbook') => 'bekoottx'
+ *   orderAlphabetically('abc123xyz') => '123abcxyz'
+ */
+function orderAlphabetically(str) {
+  return str.split('').sort().join('');
 }
 
 /**
